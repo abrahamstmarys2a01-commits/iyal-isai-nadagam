@@ -4,9 +4,45 @@ const { initialEnquiries } = require('../data/seedData');
 
 const enquiryStore = new Store('enquiries', initialEnquiries);
 
-// Generate unique reference ID (e.g. KALAI-892401)
-const generateRefId = () => {
-  return 'KALAI-' + Math.floor(100000 + Math.random() * 900000);
+// Generate sequential reference ID (e.g. KALAI-0001, KALAI-0002...)
+const generateRefId = async () => {
+  try {
+    let maxNumber = 0;
+
+    if (isMongoLive()) {
+      const enquiries = await Enquiry.find({}, { referenceId: 1 }).lean();
+      enquiries.forEach((item) => {
+        if (item.referenceId) {
+          const match = item.referenceId.match(/^KALAI-(\d+)$/i);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            if (!isNaN(num) && num < 10000 && num > maxNumber) {
+              maxNumber = num;
+            }
+          }
+        }
+      });
+    } else {
+      const all = enquiryStore.read();
+      all.forEach((item) => {
+        if (item.referenceId) {
+          const match = item.referenceId.match(/^KALAI-(\d+)$/i);
+          if (match) {
+            const num = parseInt(match[1], 10);
+            if (!isNaN(num) && num < 10000 && num > maxNumber) {
+              maxNumber = num;
+            }
+          }
+        }
+      });
+    }
+
+    const nextNumber = maxNumber + 1;
+    return `KALAI-${String(nextNumber).padStart(4, '0')}`;
+  } catch (err) {
+    console.error('Error generating reference ID:', err);
+    return 'KALAI-0001';
+  }
 };
 
 // @desc    Submit new enquiry (Public)
@@ -50,7 +86,7 @@ exports.createEnquiry = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Event Venue is required.' });
     }
 
-    const referenceId = generateRefId();
+    const referenceId = await generateRefId();
 
     const enquiryPayload = {
       referenceId,
