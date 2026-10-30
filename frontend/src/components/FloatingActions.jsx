@@ -32,6 +32,7 @@ export default function FloatingActions() {
             bottom: '65px',
             left: '0',
             width: '290px',
+            maxWidth: 'calc(100vw - 32px)',
             background: '#FFFFFF',
             borderRadius: '16px',
             boxShadow: '0 12px 36px rgba(0,0,0,0.25)',

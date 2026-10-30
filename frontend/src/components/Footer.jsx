@@ -223,7 +223,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{
+        <div className="footer-bottom-bar" style={{
           borderTop: '1px solid rgba(201, 154, 53, 0.2)',
           paddingTop: '24px',
           display: 'flex',

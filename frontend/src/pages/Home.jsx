@@ -314,7 +314,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <Link to="/about" className="btn-maroon">
                   <span>{t('common.readFullStory')}</span>
                   <ArrowRight size={16} />

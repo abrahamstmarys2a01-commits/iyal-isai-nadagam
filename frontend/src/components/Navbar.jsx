@@ -149,6 +149,7 @@ export default function Navbar() {
               <li key={item.path}>
                 <NavLink
                   to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
                 >
                   <span>{item.name}</span>
@@ -159,7 +160,12 @@ export default function Navbar() {
           </ul>
 
           <div style={{ marginBottom: '24px' }}>
-            <Link to="/enquiry" className="btn-gold" style={{ width: '100%' }}>
+            <Link
+              to="/enquiry"
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-gold"
+              style={{ width: '100%' }}
+            >
               <Sparkles size={16} />
               <span>{t('common.enquireNow')}</span>
             </Link>

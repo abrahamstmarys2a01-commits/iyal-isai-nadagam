@@ -116,7 +116,7 @@ export default function About() {
                 <img
                   src="/assets/images/iyal_isai_nadagam_hero.jpg"
                   alt="Iyal Isai Naadaga Kalamanram Vintage Classical Arts"
-                  style={{ width: '100%', height: '440px', objectFit: 'cover' }}
+                  style={{ width: '100%', height: 'clamp(260px, 45vw, 440px)', objectFit: 'cover' }}
                 />
               </div>
             </div>
