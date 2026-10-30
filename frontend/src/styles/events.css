@@ -288,6 +288,9 @@
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+  .events-header-bg {
+    padding: 42px 0 34px;
+  }
   .events-grid {
     grid-template-columns: 1fr !important;
   }

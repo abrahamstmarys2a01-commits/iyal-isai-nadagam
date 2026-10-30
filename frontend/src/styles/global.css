@@ -555,6 +555,12 @@ button {
 }
 
 @media (max-width: 640px) {
+  .contact-main-grid {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 640px) {
   .footer-bottom-bar {
     flex-direction: column !important;
     text-align: center !important;
