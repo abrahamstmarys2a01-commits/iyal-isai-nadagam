@@ -102,7 +102,8 @@ export default function Logo({ size = 'medium', light = false, showText = true }
               lineHeight: 1.2
             }}
           >
-            இயல் இசை நாடகக் கலைமன்றம்
+            <div>இயல் இசை நாடகக்</div>
+            <div>கலைமன்றம்</div>
           </div>
           <div
             className="logo-english-title"

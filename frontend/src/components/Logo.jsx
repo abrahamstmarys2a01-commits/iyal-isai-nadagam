@@ -127,8 +127,8 @@ export default function Logo({ size = 'medium', light = false, showText = true }
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)'
                 }}
               >
-                <span className="logo-tamil-row1">இயல் இசை நாடகக் </span>
-                <span className="logo-tamil-row2">கலைமன்றம்</span>
+                <span className="logo-tamil-row1" style={{ display: 'block', whiteSpace: 'nowrap' }}>இயல் இசை நாடகக்</span>
+                <span className="logo-tamil-row2" style={{ display: 'block', whiteSpace: 'nowrap' }}>கலைமன்றம்</span>
               </div>
               <div
                 className="logo-subtitle"

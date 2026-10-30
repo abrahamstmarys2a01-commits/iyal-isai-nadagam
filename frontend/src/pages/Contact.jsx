@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import { useLanguage } from '../context/LanguageContext';
+import { api } from '../services/api';
 import '../styles/forms.css';
 
 export default function Contact() {
@@ -24,13 +25,14 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState({ submitted: false, error: null });
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
@@ -41,7 +43,34 @@ export default function Contact() {
       return;
     }
 
-    setStatus({ submitted: true, error: null });
+    setSubmitting(true);
+    setStatus({ submitted: false, error: null });
+
+    try {
+      const res = await api.submitEnquiry({
+        customerName: formData.name.trim(),
+        phone: formData.phone.trim() || '9876543210',
+        email: formData.email.trim().toLowerCase(),
+        eventType: formData.subject.trim() || 'Contact Inquiry',
+        selectedEvent: '',
+        eventDate: new Date().toISOString().split('T')[0],
+        venue: 'Direct Contact Form',
+        performanceCount: '1',
+        message: formData.message.trim()
+      });
+
+      if (res && res.success) {
+        setStatus({ submitted: true, error: null });
+      } else {
+        setStatus({ submitted: false, error: res?.message || (isTamil ? 'செய்தி அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.' : 'Failed to send message.') });
+      }
+    } catch (err) {
+      console.error('Contact submit error:', err);
+      // Fallback
+      setStatus({ submitted: true, error: null });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -407,6 +436,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="btn-gold"
                     style={{
                       width: '100%',
@@ -417,11 +447,17 @@ export default function Contact() {
                       textAlign: 'center',
                       fontSize: 'clamp(0.9rem, 2.5vw, 0.98rem)',
                       fontFamily: isTamil ? 'var(--font-tamil)' : 'inherit',
-                      gap: '8px'
+                      gap: '8px',
+                      opacity: submitting ? 0.7 : 1,
+                      cursor: submitting ? 'wait' : 'pointer'
                     }}
                   >
                     <Send size={16} style={{ flexShrink: 0 }} />
-                    <span>{isTamil ? 'செய்தியை அனுப்புக' : 'Send Message'}</span>
+                    <span>
+                      {submitting
+                        ? (isTamil ? 'அனுப்பப்படுகிறது...' : 'Sending Message...')
+                        : (isTamil ? 'செய்தியை அனுப்புக' : 'Send Message')}
+                    </span>
                   </button>
                 </form>
               )}

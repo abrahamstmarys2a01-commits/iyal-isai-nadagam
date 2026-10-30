@@ -70,10 +70,16 @@ const autoSeedMongoDB = async () => {
 };
 
 const connectDB = async () => {
-  let uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/kalamanram_db';
+  const DEFAULT_ATLAS_URI = 'mongodb+srv://abrahamstmarys2a01_db_user:mediawave123@cluster0.mh9rl2o.mongodb.net/kalamanram?retryWrites=true&w=majority';
+  let uri = process.env.MONGODB_URI || DEFAULT_ATLAS_URI;
 
   // Strip wrapping quotes if user pasted with quotes in .env
   uri = uri.replace(/^["']|["']$/g, '').trim();
+
+  // If URI has template placeholder or localhost fallback, use Atlas
+  if (uri.includes('<db_username>') || uri.includes('127.0.0.1')) {
+    uri = DEFAULT_ATLAS_URI;
+  }
 
   // If URI ends with just '/', append database name 'kalamanram'
   if (uri.endsWith('/')) {

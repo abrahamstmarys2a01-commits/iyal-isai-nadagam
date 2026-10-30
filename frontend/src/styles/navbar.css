@@ -303,8 +303,21 @@
 
 .logo-tamil-row1,
 .logo-tamil-row2 {
-  display: inline;
+  display: block;
   white-space: nowrap;
+}
+
+.logo-tamil-row1 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.logo-tamil-row2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.18;
+  color: #FFE082;
 }
 
 .logo-english-title {
