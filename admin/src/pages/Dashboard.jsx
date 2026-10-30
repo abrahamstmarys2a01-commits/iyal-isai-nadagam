@@ -55,8 +55,8 @@ export default function Dashboard() {
           pendingEnquiries: enquiries.filter(e => e.status === 'Pending').length,
           confirmedEnquiries: enquiries.filter(e => e.status === 'Confirmed').length
         },
-        recentEnquiries: enquiries.slice(0, 5),
-        nextEvents: events.slice(0, 4)
+        recentEnquiries: enquiries.slice(0, 4),
+        nextEvents: events.slice(0, 3)
       });
     } catch (err) {
       console.warn('Dashboard fetch error:', err);
@@ -95,8 +95,8 @@ export default function Dashboard() {
     confirmedEnquiries: 0
   };
 
-  const recentEnquiries = data?.recentEnquiries || [];
-  const nextEvents = data?.nextEvents || [];
+  const recentEnquiries = (data?.recentEnquiries || []).slice(0, 4);
+  const nextEvents = (data?.nextEvents || []).slice(0, 3);
 
   return (
     <div className="admin-dashboard-view">
@@ -104,43 +104,50 @@ export default function Dashboard() {
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'space-between',
-        gap: '20px',
-        marginBottom: '28px',
+        gap: '12px',
+        marginBottom: '14px',
         position: 'relative'
       }}>
         <div>
           <h1 style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: '2.6rem',
+            fontSize: '1.75rem',
             fontWeight: 800,
             color: '#1F030A',
-            margin: '0 0 4px',
+            margin: '0 0 2px',
             lineHeight: 1.15
           }}>
             Dashboard
           </h1>
-          <p style={{
-            color: 'var(--text-muted)',
-            fontSize: '1.05rem',
-            margin: '0 0 10px'
-          }}>
-            Welcome back, Admin
-          </p>
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            fontSize: '0.78rem',
-            fontWeight: 700,
-            color: 'var(--gold-dark)',
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase'
+            gap: '12px'
           }}>
-            <span>CLASSICAL ARTS</span>
-            <span>|</span>
-            <span>RICHER LIVES</span>
+            <p style={{
+              color: 'var(--text-muted)',
+              fontSize: '0.88rem',
+              margin: 0
+            }}>
+              Welcome back, Admin
+            </p>
+            <span style={{ color: 'var(--cream-border)', fontSize: '0.8rem' }}>•</span>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              color: 'var(--gold-dark)',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase'
+            }}>
+              <span>CLASSICAL ARTS</span>
+              <span>|</span>
+              <span>RICHER LIVES</span>
+            </div>
           </div>
         </div>
 
@@ -149,26 +156,26 @@ export default function Dashboard() {
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '6px',
             background: '#FFFFFF',
             border: '1px solid var(--cream-border)',
-            padding: '8px 16px',
-            borderRadius: '10px',
-            fontSize: '0.86rem',
+            padding: '5px 12px',
+            borderRadius: '8px',
+            fontSize: '0.8rem',
             fontWeight: 600,
             color: 'var(--maroon-darkest)'
           }}>
-            <Calendar size={15} style={{ color: 'var(--gold-dark)' }} />
+            <Calendar size={13} style={{ color: 'var(--gold-dark)' }} />
             <span>Thursday, 30 October 2026</span>
           </div>
           <div style={{
-            fontSize: '0.68rem',
+            fontSize: '0.62rem',
             color: 'rgba(100, 83, 75, 0.7)',
-            letterSpacing: '0.12em',
-            marginTop: '8px',
+            letterSpacing: '0.1em',
+            marginTop: '3px',
             textTransform: 'uppercase'
           }}>
-            PRESERVING • PROMOTING • CELEBRATING<br />OUR CLASSICAL HERITAGE
+            PRESERVING • PROMOTING • CELEBRATING OUR CLASSICAL HERITAGE
           </div>
         </div>
       </div>
@@ -178,7 +185,7 @@ export default function Dashboard() {
         {/* Total Events */}
         <div className="admin-stat-card">
           <div className="stat-icon-wrapper maroon">
-            <Calendar size={26} />
+            <Calendar size={20} />
           </div>
           <div>
             <div className="stat-title-label">Total Events</div>
@@ -189,7 +196,7 @@ export default function Dashboard() {
         {/* Upcoming Events */}
         <div className="admin-stat-card">
           <div className="stat-icon-wrapper gold">
-            <Users size={26} />
+            <Users size={20} />
           </div>
           <div>
             <div className="stat-title-label">Upcoming Events</div>
@@ -202,7 +209,7 @@ export default function Dashboard() {
         {/* Total Enquiries */}
         <div className="admin-stat-card">
           <div className="stat-icon-wrapper green">
-            <Mail size={26} />
+            <Mail size={20} />
           </div>
           <div>
             <div className="stat-title-label">Total Enquiries</div>
@@ -215,7 +222,7 @@ export default function Dashboard() {
         {/* Pending Enquiries */}
         <div className="admin-stat-card">
           <div className="stat-icon-wrapper blue">
-            <Clock size={26} />
+            <Clock size={20} />
           </div>
           <div>
             <div className="stat-title-label">Pending Enquiries</div>
@@ -238,7 +245,7 @@ export default function Dashboard() {
             <Link
               to="/admin/enquiries"
               style={{
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
                 fontWeight: 600,
                 color: 'var(--maroon-primary)',
                 display: 'inline-flex',
@@ -248,7 +255,7 @@ export default function Dashboard() {
               }}
             >
               <span>View all</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={13} />
             </Link>
           </div>
 
@@ -284,7 +291,7 @@ export default function Dashboard() {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="4" style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>
+                    <td colSpan="4" style={{ textAlign: 'center', padding: '16px', color: 'var(--text-muted)' }}>
                       No enquiries registered yet.
                     </td>
                   </tr>
@@ -294,8 +301,8 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Right: Upcoming Events Preview */}
-        <div className="dashboard-panel-card">
+        {/* Right: Upcoming Events Preview (Compacted box) */}
+        <div className="dashboard-panel-card upcoming-events-card">
           <div className="panel-card-header">
             <div className="panel-card-title">
               <span style={{ color: 'var(--maroon-primary)' }}>🗓</span>
@@ -304,7 +311,7 @@ export default function Dashboard() {
             <Link
               to="/admin/events"
               style={{
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
                 fontWeight: 600,
                 color: 'var(--maroon-primary)',
                 display: 'inline-flex',
@@ -314,11 +321,11 @@ export default function Dashboard() {
               }}
             >
               <span>View all</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={13} />
             </Link>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div className="dashboard-events-list">
             {nextEvents.length > 0 ? (
               nextEvents.map((ev) => (
                 <div key={ev._id || ev.id} className="dashboard-event-item">
@@ -330,7 +337,7 @@ export default function Dashboard() {
                   <div style={{ flexGrow: 1, minWidth: 0 }}>
                     <div style={{
                       fontWeight: 700,
-                      fontSize: '0.94rem',
+                      fontSize: '0.82rem',
                       color: 'var(--maroon-darkest)',
                       whiteSpace: 'nowrap',
                       overflow: 'hidden',
@@ -341,29 +348,20 @@ export default function Dashboard() {
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '6px',
-                      fontSize: '0.78rem',
+                      gap: '5px',
+                      fontSize: '0.72rem',
                       color: 'var(--text-muted)',
                       marginTop: '2px'
                     }}>
-                      <Calendar size={12} style={{ color: 'var(--gold-dark)' }} />
+                      <Calendar size={11} style={{ color: 'var(--gold-dark)' }} />
                       <span>{ev.displayDate || ev.date}</span>
                     </div>
-                    <div style={{
-                      fontSize: '0.7rem',
-                      color: 'var(--gold-dark)',
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      marginTop: '2px'
-                    }}>
-                      {ev.shortDesc?.slice(0, 32)}...
-                    </div>
                   </div>
-                  <ChevronRight size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
+                  <ChevronRight size={14} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
                 </div>
               ))
             ) : (
-              <div style={{ textAlign: 'center', padding: '24px', color: 'var(--text-muted)' }}>
+              <div style={{ textAlign: 'center', padding: '16px', color: 'var(--text-muted)', fontSize: '0.82rem' }}>
                 No upcoming events scheduled.
               </div>
             )}
@@ -373,20 +371,20 @@ export default function Dashboard() {
 
       {/* 4. BOTTOM QUOTE STRIP (Matching Reference UI footer) */}
       <div className="admin-bottom-quote-strip">
-        <div style={{ fontStyle: 'italic', fontFamily: 'Playfair Display, serif', color: 'var(--maroon-primary)' }}>
+        <div style={{ fontStyle: 'italic', fontFamily: 'Playfair Display, serif', color: 'var(--maroon-primary)', fontSize: '0.8rem' }}>
           "Through Iyal, Isai and Naadagam, we keep our culture alive."
         </div>
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
-          fontSize: '0.75rem',
+          gap: '10px',
+          fontSize: '0.68rem',
           fontWeight: 700,
           color: 'var(--gold-dark)',
           letterSpacing: '0.12em',
           textTransform: 'uppercase'
         }}>
-          <div style={{ width: '36px', height: '1.5px', background: 'var(--gold-primary)' }} />
+          <div style={{ width: '28px', height: '1.5px', background: 'var(--gold-primary)' }} />
           <span>TRADITION INSPIRES TOMORROW</span>
         </div>
       </div>
