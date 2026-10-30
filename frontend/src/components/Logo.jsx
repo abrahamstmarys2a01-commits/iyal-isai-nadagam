@@ -15,8 +15,7 @@ export default function Logo({ size = 'medium', light = false, showText = true }
         alignItems: 'center',
         gap: size === 'small' ? '6px' : '8px',
         textDecoration: 'none',
-        flexShrink: 0,
-        whiteSpace: 'nowrap'
+        minWidth: 0
       }}
     >
       <div
@@ -111,27 +110,25 @@ export default function Logo({ size = 'medium', light = false, showText = true }
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            flexShrink: 0,
-            whiteSpace: 'nowrap'
+            minWidth: 0
           }}
         >
           {isTamil ? (
-            /* Tamil-only Title & Subtitle when Tamil is selected */
+            /* Tamil Title & Subtitle */
             <>
               <div
                 className="logo-tamil-text"
                 style={{
                   fontFamily: "'Noto Serif Tamil', serif",
-                  fontSize: size === 'small' ? '0.78rem' : size === 'large' ? '1.18rem' : '0.90rem',
                   fontWeight: 800,
                   color: '#FFE082',
                   letterSpacing: '0.01em',
-                  lineHeight: 1.2,
-                  whiteSpace: 'nowrap',
+                  lineHeight: 1.15,
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)'
                 }}
               >
-                இயல் இசை நாடகக் கலைமன்றம்
+                <span className="logo-tamil-row1">இயல் இசை நாடகக் </span>
+                <span className="logo-tamil-row2">கலைமன்றம்</span>
               </div>
               <div
                 className="logo-subtitle"
@@ -149,17 +146,16 @@ export default function Logo({ size = 'medium', light = false, showText = true }
               </div>
             </>
           ) : (
-            /* English-only Title & Subtitle when English is selected */
+            /* English Title & Subtitle */
             <>
               <div
                 className="logo-english-title"
                 style={{
                   fontFamily: "'Cinzel', serif",
-                  fontSize: size === 'small' ? '0.78rem' : size === 'large' ? '1.18rem' : '0.90rem',
                   fontWeight: 800,
                   color: light ? '#FAF7F0' : '#FFFFFF',
                   letterSpacing: '0.03em',
-                  lineHeight: 1.2,
+                  lineHeight: 1.15,
                   whiteSpace: 'nowrap',
                   textTransform: 'uppercase',
                   textShadow: '0 1px 3px rgba(0,0,0,0.4)'
