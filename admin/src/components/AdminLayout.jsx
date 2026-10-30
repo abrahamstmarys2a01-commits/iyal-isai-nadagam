@@ -17,6 +17,7 @@ import {
   CheckCheck,
   ArrowRight
 } from 'lucide-react';
+import { api } from '../services/api';
 import '../styles/admin.css';
 
 export default function AdminLayout({ children }) {
@@ -29,38 +30,62 @@ export default function AdminLayout({ children }) {
   const notifRef = useRef(null);
   const userDropdownRef = useRef(null);
 
-  const [notifications, setNotifications] = useState([
-    {
-      id: 'n1',
-      type: 'enquiry',
-      title: 'New Troupe Booking Enquiry',
-      tamilTitle: 'புதிய கலைக்குழு முன்பதிவு கோரிக்கை',
-      desc: 'S. Ramanathan requested Bharatanatyam troupe for annual festival.',
-      time: '5m ago',
-      unread: true,
-      link: '/enquiries'
-    },
-    {
-      id: 'n2',
-      type: 'event',
-      title: 'Upcoming Event Tomorrow',
-      tamilTitle: 'நிகழ்வு நினைவூட்டல்',
-      desc: "'நாட்டியப் பேரொளி - பரதநாட்டிய பெருவிழா' starts tomorrow 6:00 PM.",
-      time: '1h ago',
-      unread: true,
-      link: '/events'
-    },
-    {
-      id: 'n3',
-      type: 'enquiry',
-      title: 'New Contact Message Received',
-      tamilTitle: 'புதிய கலை விசாரணைக் கோரிக்கை',
-      desc: 'Dr. Meenakshi Sundaram sent an inquiry for Carnatic Vocal concert.',
-      time: 'Yesterday',
-      unread: true,
-      link: '/enquiries'
+  const [notifications, setNotifications] = useState([]);
+  const [readNotifIds, setReadNotifIds] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('kalamanram_read_enquiries') || '[]');
+    } catch {
+      return [];
     }
-  ]);
+  });
+
+  // Helper for human-readable relative time
+  const getTimeAgo = (dateStr) => {
+    if (!dateStr) return 'Recently';
+    const created = new Date(dateStr);
+    const diffMs = Date.now() - created.getTime();
+    if (isNaN(diffMs) || diffMs < 0) return 'Recently';
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    if (diffMins < 1) return 'Just now';
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays === 1) return 'Yesterday';
+    return `${diffDays}d ago`;
+  };
+
+  // Fetch ONLY new enquiries (status: 'Pending')
+  const fetchNewEnquiries = async () => {
+    try {
+      const res = await api.adminGetEnquiries({ status: 'Pending' });
+      if (res.success && Array.isArray(res.data)) {
+        const notifList = res.data.map((enq) => {
+          const id = enq._id || enq.id || enq.referenceId;
+          const isUnread = !readNotifIds.includes(id);
+          return {
+            id,
+            type: 'enquiry',
+            title: enq.eventType ? `New ${enq.eventType} Enquiry` : 'New Cultural Booking Enquiry',
+            tamilTitle: 'புதிய கலைக்குழு விசாரணைக் கோரிக்கை',
+            desc: `${enq.customerName || 'Customer'} requested ${enq.eventType || 'performance'} (${enq.phone || 'Phone not provided'}).`,
+            time: getTimeAgo(enq.createdAt),
+            unread: isUnread,
+            link: '/enquiries'
+          };
+        });
+        setNotifications(notifList);
+      }
+    } catch (err) {
+      console.warn('[AdminLayout] Failed to load enquiry notifications:', err);
+    }
+  };
+
+  useEffect(() => {
+    fetchNewEnquiries();
+    const interval = setInterval(fetchNewEnquiries, 20000); // Check every 20s for new enquiries
+    return () => clearInterval(interval);
+  }, [readNotifIds]);
 
   const unreadCount = notifications.filter(n => n.unread).length;
 
@@ -92,10 +117,25 @@ export default function AdminLayout({ children }) {
 
   const handleMarkAllRead = (e) => {
     e.stopPropagation();
+    const allIds = notifications.map(n => n.id);
+    const updated = Array.from(new Set([...readNotifIds, ...allIds]));
+    setReadNotifIds(updated);
+    try {
+      localStorage.setItem('kalamanram_read_enquiries', JSON.stringify(updated));
+    } catch (err) {
+      console.error(err);
+    }
     setNotifications(prev => prev.map(n => ({ ...n, unread: false })));
   };
 
   const handleNotificationClick = (notif) => {
+    const updated = Array.from(new Set([...readNotifIds, notif.id]));
+    setReadNotifIds(updated);
+    try {
+      localStorage.setItem('kalamanram_read_enquiries', JSON.stringify(updated));
+    } catch (err) {
+      console.error(err);
+    }
     setNotifications(prev => prev.map(n => n.id === notif.id ? { ...n, unread: false } : n));
     setNotificationsOpen(false);
     navigate(notif.link);
@@ -265,7 +305,7 @@ export default function AdminLayout({ children }) {
                   <div className="notif-header">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <span style={{ fontWeight: 800, fontSize: '0.92rem', color: '#FFFFFF' }}>
-                        அறிவிப்புகள் (Notifications)
+                        புதிய விசாரணைகள் (New Enquiries)
                       </span>
                       {unreadCount > 0 && (
                         <span className="notif-count-pill">{unreadCount} New</span>
@@ -292,8 +332,8 @@ export default function AdminLayout({ children }) {
                           className={`notif-item ${item.unread ? 'unread' : ''}`}
                           onClick={() => handleNotificationClick(item)}
                         >
-                          <div className={`notif-icon-circle notif-${item.type}`}>
-                            {item.type === 'event' ? <Calendar size={16} /> : <Mail size={16} />}
+                          <div className="notif-icon-circle notif-enquiry">
+                            <Mail size={16} />
                           </div>
                           <div className="notif-content">
                             <div className="notif-title-row">
@@ -307,9 +347,14 @@ export default function AdminLayout({ children }) {
                         </div>
                       ))
                     ) : (
-                      <div className="notif-empty">
-                        <Bell size={28} style={{ opacity: 0.3, marginBottom: '8px' }} />
-                        <div>No new notifications</div>
+                      <div className="notif-empty" style={{ padding: '36px 20px', textAlign: 'center', color: 'var(--text-muted)' }}>
+                        <Mail size={32} style={{ opacity: 0.35, marginBottom: '8px', color: 'var(--maroon-primary)' }} />
+                        <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--maroon-darkest)' }}>
+                          No New Enquiries
+                        </div>
+                        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '2px' }}>
+                          புதிய விசாரணைக் கோரிக்கைகள் எதுவும் இல்லை
+                        </div>
                       </div>
                     )}
                   </div>

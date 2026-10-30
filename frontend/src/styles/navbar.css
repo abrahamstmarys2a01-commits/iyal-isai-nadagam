@@ -393,18 +393,6 @@
     display: none !important;
   }
 
-  .lang-label-desktop {
-    display: none !important;
-  }
-
-  .lang-label-mobile {
-    display: inline-block !important;
-    font-size: 0.76rem !important;
-    font-weight: 700 !important;
-    color: #FFE082 !important;
-    letter-spacing: 0.02em !important;
-  }
-
   .language-switcher-pill {
     padding: 4px 8px !important;
     gap: 4px !important;
@@ -470,10 +458,6 @@
     height: 12px !important;
   }
 
-  .lang-label-mobile {
-    font-size: 0.72rem !important;
-  }
-
   .nav-actions-desktop {
     gap: 6px !important;
   }
@@ -503,16 +487,6 @@
   color: var(--gold-light);
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-.lang-label-desktop {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.lang-label-mobile {
-  display: none;
 }
 
 .language-switcher-pill:hover {

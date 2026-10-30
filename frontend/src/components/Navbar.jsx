@@ -90,17 +90,12 @@ export default function Navbar() {
                 onClick={toggleLang}
                 className="language-switcher-pill"
                 id="btn-lang-toggle"
-                title={isTamil ? "Click to switch to English" : "தமிழுக்கு மாற்ற கிளிக் செய்க"}
+                title={isTamil ? "Switch to English" : "தமிழுக்கு மாற்ற கிளிக் செய்க"}
               >
                 <Globe size={13} />
-                <span className="lang-label-desktop">
-                  <span className={isTamil ? 'lang-badge active' : 'lang-badge'}>தமிழ்</span>
-                  <span className="lang-separator">|</span>
-                  <span className={!isTamil ? 'lang-badge active' : 'lang-badge'}>ENG</span>
-                </span>
-                <span className="lang-label-mobile">
-                  {isTamil ? 'ENG' : 'தமிழ்'}
-                </span>
+                <span className={isTamil ? 'lang-badge active' : 'lang-badge'}>தமிழ்</span>
+                <span className="lang-separator">|</span>
+                <span className={!isTamil ? 'lang-badge active' : 'lang-badge'}>ENG</span>
               </button>
 
               <Link to="/enquiry" className="btn-gold" id="btn-navbar-enquire">
