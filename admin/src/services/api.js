@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://iyal-isai-nadagam.onrender.com/api';
 
 const getHeaders = (isMultipart = false) => {
   const token = sessionStorage.getItem('kalamanram_admin_token') || localStorage.getItem('kalamanram_admin_token');

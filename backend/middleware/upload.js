@@ -57,7 +57,8 @@ const processUploadedImage = async (file) => {
   }
 
   // Return server-accessible relative URL
-  return `http://localhost:5000/uploads/${file.filename}`;
+  const serverBase = process.env.SERVER_BASE_URL || 'https://iyal-isai-nadagam.onrender.com';
+  return `${serverBase}/uploads/${file.filename}`;
 };
 
 module.exports = {
