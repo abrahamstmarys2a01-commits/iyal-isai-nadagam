@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "enq_1",
+    "referenceId": "KALAI-892401",
+    "customerName": "Lakshmi Raman",
+    "phone": "98401 23456",
+    "email": "lakshmi.raman@gmail.com",
+    "eventType": "Bharatanatyam",
+    "selectedEvent": "Natya Sandhya",
+    "eventDate": "12 Nov 2026",
+    "venue": "Chennai Fine Arts Sabha",
+    "performanceCount": "1 Performance (Full Ensemble)",
+    "message": "We require a 90-minute Bharatanatyam Margam with live Carnatic orchestra for our silver jubilee function.",
+    "status": "Pending",
+    "createdAt": "2026-10-28T09:30:00.000Z"
+  },
+  {
+    "_id": "enq_2",
+    "referenceId": "KALAI-734892",
+    "customerName": "Arun Kumar",
+    "phone": "98412 87654",
+    "email": "arun.k@yahoo.com",
+    "eventType": "Nadaswaram",
+    "selectedEvent": "Wedding Mangala Isai",
+    "eventDate": "18 Nov 2026",
+    "venue": "Mayor Ramanathan Mandapam, Chennai",
+    "performanceCount": "2 Sessions (Muhurtham & Reception)",
+    "message": "Looking for a senior Nadaswaram & Thavil ensemble for family wedding.",
+    "status": "Confirmed",
+    "createdAt": "2026-10-26T14:15:00.000Z"
+  },
+  {
+    "_id": "enq_3",
+    "referenceId": "KALAI-651290",
+    "customerName": "Meera S",
+    "phone": "97890 45612",
+    "email": "meera.s@outlook.com",
+    "eventType": "Classical Dance",
+    "selectedEvent": "Silambu Natyotsav",
+    "eventDate": "22 Nov 2026",
+    "venue": "Raja Muthaiah Mandram, Madurai",
+    "performanceCount": "1 Performance (Full Ensemble)",
+    "message": "Requesting availability and passes for 50 delegates attending from our cultural academy.",
+    "status": "Contacted",
+    "createdAt": "2026-10-25T11:45:00.000Z"
+  },
+  {
+    "_id": "enq_4",
+    "referenceId": "KALAI-542198",
+    "customerName": "Dr. R. Natarajan",
+    "phone": "94440 98765",
+    "email": "dr.natarajan@gmail.com",
+    "eventType": "Folk Dance",
+    "selectedEvent": "Gramiya Thiruvizha",
+    "eventDate": "14 Jan 2027",
+    "venue": "DakshinaChitra Grounds",
+    "performanceCount": "Half-Day Cultural Showcase",
+    "message": "Interested in booking Karakattam and Parai Isai troupes for community harvest celebration.",
+    "status": "Pending",
+    "createdAt": "2026-10-29T16:20:00.000Z"
+  }
+]

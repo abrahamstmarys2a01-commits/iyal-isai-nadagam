@@ -1,0 +1,171 @@
+[
+  {
+    "_id": "ev_1",
+    "title": "Naadha Sangamam: Grand Carnatic Classical Jubilee",
+    "tamilTitle": "நாத சங்கமம்: மகா கர்நாடக சங்கீத பெருவிழா",
+    "date": "2026-11-20",
+    "displayDate": "November 20, 2026",
+    "time": "06:00 PM - 09:30 PM IST",
+    "venue": "Narada Gana Sabha Main Auditorium, TTK Road, Alwarpet, Chennai",
+    "category": "Carnatic Music",
+    "shortDesc": "An auspicious evening of classical Carnatic vocal symphony featuring master vidwans celebrating saint-poet compositions with live percussion jugalbandi.",
+    "fullDesc": "Naadha Sangamam brings together illustrious maestros of South Indian classical music for an uninterrupted three-hour spiritual journey. The concert features rare ragas, profound Saint Thyagaraja kritis, Dikshitar Navavarna compositions, and concludes with an electrifying Thani Avarthanam featuring Mridangam, Ghatam, and Kanjira in rhythmic unison.",
+    "poster": "/uploads/isai_vintage.jpg",
+    "featured": true,
+    "isPublished": true,
+    "troupe": "Kalamanram Classical Music Wing & Guest Vidwans",
+    "artForm": "Vocal, Violin & Laya Vinyasam",
+    "entry": "Open to All / Reserved Seating Available",
+    "schedule": [
+      { "time": "06:00 PM", "item": "Mangala Isai & Lamp Lighting Ceremony" },
+      { "time": "06:30 PM", "item": "Vocal Recital: Pancharatna Kritis in Mayamalavagowla & Kalyani" },
+      { "time": "08:00 PM", "item": "Thani Avarthanam: Percussion Dialogue on Mridangam & Ghatam" },
+      { "time": "09:00 PM", "item": "Mangalam & Artist Felicitations" }
+    ],
+    "gallery": [
+      "/uploads/isai_vintage.jpg",
+      "/uploads/iyal_isai_nadagam_hero.jpg"
+    ]
+  },
+  {
+    "_id": "ev_2",
+    "title": "Margazhi Isai Vizha",
+    "tamilTitle": "மார்கழி இசை விழா",
+    "date": "2026-11-12",
+    "displayDate": "12 Nov 2026",
+    "time": "06:00 PM - 09:00 PM IST",
+    "venue": "Muthamizh Peravai Arangam, Chennai",
+    "category": "Carnatic Music",
+    "shortDesc": "MUSIC UNITES SOULS. A grand classical festival honoring saint composers and ancient devotional ragas.",
+    "fullDesc": "A divine assembly of vocalists and instrumentalists performing devotional kritis, mangala isai, and rare classical compositions.",
+    "poster": "/uploads/isai_vintage.jpg",
+    "featured": true,
+    "isPublished": true,
+    "troupe": "Kalamanram Carnatic Ensemble",
+    "artForm": "Veena & Vocal Symphony",
+    "entry": "Open to All",
+    "schedule": [
+      { "time": "06:00 PM", "item": "Inauguration" },
+      { "time": "07:00 PM", "item": "Main Katcheri" }
+    ],
+    "gallery": [
+      "/uploads/isai_vintage.jpg"
+    ]
+  },
+  {
+    "_id": "ev_8",
+    "title": "Sangam Thamizh Iyal Peravai: Classical Literary Conclave",
+    "tamilTitle": "சங்கத் தமிழ் இயல் பேரவை: முத்தமிழ் இலக்கிய மாநாடு",
+    "date": "2026-11-28",
+    "displayDate": "November 28, 2026",
+    "time": "09:30 AM - 05:00 PM IST",
+    "venue": "Madurai Tamizh Sangam Main Hall, Madurai",
+    "category": "Literature",
+    "shortDesc": "பழம்பெரும் சங்க இலக்கியக் கவிதைகள், திருக்குறள் நயவுரைகள் மற்றும் ஓலைச்சுவடி வரலாற்றுப் பெருவிழா.",
+    "fullDesc": "செம்மொழித் தமிழின் பெருமை பேசும் சங்க இலக்கிய சொற்பொழிவுகள், சிலப்பதிகார கவியரங்கம் மற்றும் அரிய ஓலைச்சுவடிகள் காட்சி அரங்கம்.",
+    "poster": "/uploads/iyal_vintage.jpg",
+    "featured": true,
+    "isPublished": true,
+    "troupe": "கலைமன்ற புலவர் பெருமக்கள்",
+    "artForm": "இயல் இலக்கிய அரங்கம் & கவியரங்கம்",
+    "entry": "அனைவருக்கும் அனுமதி இலவசம்",
+    "schedule": [
+      { "time": "09:30 AM", "item": "தமிழ்த்தாய் வாழ்த்து & மங்கல விளக்கேற்றுதல்" },
+      { "time": "10:30 AM", "item": "சங்க இலக்கிய கவியரங்கம்" },
+      { "time": "02:30 PM", "item": "ஓலைச்சுவடிகள் பாதுகாப்பு கருத்தரங்கம்" }
+    ],
+    "gallery": [
+      "/uploads/iyal_vintage.jpg",
+      "/uploads/iyal_isai_nadagam_hero.jpg"
+    ]
+  },
+  {
+    "_id": "ev_4",
+    "title": "Silambu Natyotsav: Bharatanatyam Dance Drama",
+    "tamilTitle": "சிலம்பு நாட்டியோத்சவம்: சிலப்பதிகார நாட்டிய நாடகம்",
+    "date": "2026-12-15",
+    "displayDate": "December 15, 2026",
+    "time": "05:30 PM - 09:00 PM IST",
+    "venue": "Muthamizh Peravai TN Rajarathinam Kalai Arangam, Raja Annamalaipuram, Chennai",
+    "category": "Bharatanatyam",
+    "shortDesc": "A majestic theatrical dance ballet dramatizing the immortal Tamil epic Silappadikaram with 30 classical dancers and live nattuvangam.",
+    "fullDesc": "Experience the poetic brilliance of Ilango Adigal brought to life through intricate Nritta, dynamic Abhinaya, and theatrical choreography.",
+    "poster": "/uploads/bharatanatyam_vintage.jpg",
+    "featured": true,
+    "isPublished": true,
+    "troupe": "Iyal Isai Naadaga Repertory Dance Troupe",
+    "artForm": "Classical Bharatanatyam Thematic Ballet",
+    "entry": "Donor Passes & Student Entry",
+    "schedule": [],
+    "gallery": [
+      "/uploads/bharatanatyam_vintage.jpg",
+      "/uploads/iyal_isai_nadagam_hero.jpg"
+    ]
+  },
+  {
+    "_id": "ev_5",
+    "title": "Gramiya Thiruvizha: Pongal Folk Arts Carnival",
+    "tamilTitle": "கிராமியத் திருவிழா: பொங்கல் நாட்டுப்புறக் கலை சங்கமம்",
+    "date": "2027-01-14",
+    "displayDate": "January 14, 2027",
+    "time": "04:00 PM - 10:00 PM IST",
+    "venue": "DakshinaChitra Heritage Center Amphitheatre, Muttukadu, ECR, Chennai",
+    "category": "Folk Dance",
+    "shortDesc": "A high-spirited rural harvest festival featuring vibrant Karakattam, Oyilattam, Mayilattam, and pulsating Parai drums in an open-air arena.",
+    "fullDesc": "Celebrating the bountiful harvest season of Pongal with traditional vigor. Over 50 folk dancers and percussionists gather to present authentic arts.",
+    "poster": "/uploads/karakattam_vintage.jpg",
+    "featured": false,
+    "isPublished": true,
+    "troupe": "Tamil Nadu Janapada Kalai Kazhagam",
+    "artForm": "Karakattam, Oyilattam, Parai & Kavadi",
+    "entry": "Open Heritage Festival Pass",
+    "schedule": [],
+    "gallery": [
+      "/uploads/karakattam_vintage.jpg"
+    ]
+  },
+  {
+    "_id": "ev_6",
+    "title": "Karna Moksham: Traditional Therukoothu Heritage Drama",
+    "tamilTitle": "கர்ண மோட்சம்: பாரம்பரிய தெருக்கூத்து நாடகம்",
+    "date": "2027-02-27",
+    "displayDate": "February 27, 2027",
+    "time": "07:00 PM - 11:30 PM IST",
+    "venue": "Raja Muthaiah Mandram Cultural Grounds, Madurai",
+    "category": "Drama",
+    "shortDesc": "The spellbinding traditional open-air Tamil folk drama portraying the valor and sacrifice of Karna with ornate face paint and song.",
+    "fullDesc": "Therukoothu represents Tamil Nadu’s ancient theatrical idiom, blending high-pitch singing, stylized dialogues, martial spins, and profound philosophical debates.",
+    "poster": "/uploads/nadagam_vintage.jpg",
+    "featured": false,
+    "isPublished": true,
+    "troupe": "Purisai Therukoothu Kalai Sangam",
+    "artForm": "Therukoothu Folk Theatre",
+    "entry": "Free Public Cultural Performance",
+    "schedule": [],
+    "gallery": [
+      "/uploads/nadagam_vintage.jpg"
+    ]
+  },
+  {
+    "_id": "ev_7",
+    "title": "Veena Nadhanjali: Divine Strings Recital",
+    "tamilTitle": "வீணா நாதாஞ்சலி: தெய்வீக வீணை இசை சங்கமம்",
+    "date": "2026-08-12",
+    "displayDate": "August 12, 2026",
+    "time": "06:00 PM - 08:45 PM IST",
+    "venue": "Vani Mahal, G.N. Chetty Road, T. Nagar, Chennai",
+    "category": "Carnatic Music",
+    "shortDesc": "A transcendent Saraswathi Veena recital showcasing exquisite gamakas, classical ragas, and intricate taanam passages.",
+    "fullDesc": "Celebrated as the national instrument of classical lore, the Saraswathi Veena represents the pinnacle of microtonal purity.",
+    "poster": "/uploads/isai_vintage.jpg",
+    "featured": false,
+    "isPublished": true,
+    "troupe": "Saraswathi Veena Vadyalayam Troupe",
+    "artForm": "Veena Solo & Percussion Accompaniment",
+    "entry": "Completed Concert Offering",
+    "schedule": [],
+    "gallery": [
+      "/uploads/isai_vintage.jpg"
+    ]
+  }
+]

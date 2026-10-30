@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "admin_default_id",
+    "name": "Admin",
+    "email": "admin@kalamanram.org",
+    "password": "$2b$10$MxpcKX53tvFNdzHhwsq.Y.hlcFaFXNQeoH1J2sPMXmZrMHpoMOJv2",
+    "role": "superadmin",
+    "createdAt": "2026-10-30T10:00:00.000Z"
+  }
+]

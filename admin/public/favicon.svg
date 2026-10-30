@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#460718" />
+      <stop offset="50%" stop-color="#74152E" />
+      <stop offset="100%" stop-color="#26040C" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082" />
+      <stop offset="50%" stop-color="#C99A35" />
+      <stop offset="100%" stop-color="#8C6514" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)" />
+  <circle cx="32" cy="32" r="28" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="url(#goldGrad)" stroke-width="1"/>
+  <!-- Diya flame & Nataraja arch icon -->
+  <path d="M32 10 C34 16 39 21 39 26 C39 31 35.8 34 32 34 C28.2 34 25 31 25 26 C25 21 30 16 32 10 Z" fill="url(#goldGrad)" />
+  <path d="M32 16 C33 19 36 22 36 25 C36 28 34.2 30 32 30 C29.8 30 28 28 28 25 C28 22 31 19 32 16 Z" fill="#FFF2B2" />
+  <!-- Diya base -->
+  <path d="M16 34 C16 43 23 48 32 48 C41 48 48 43 48 34 C43 37 37 38 32 38 C27 38 21 37 16 34 Z" fill="url(#goldGrad)" />
+  <!-- Base stand -->
+  <path d="M26 48 L24 54 L40 54 L38 48 Z" fill="url(#goldGrad)" />
+</svg>

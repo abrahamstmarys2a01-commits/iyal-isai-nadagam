@@ -1,0 +1,470 @@
+/* Global CSS for Iyal Isai Naadaga Kalamanram */
+:root {
+  --maroon-darkest: #1F030B;
+  --maroon-dark: #3F0A19;
+  --maroon-primary: #74152E;
+  --maroon-rich: #8F1A3A;
+  --maroon-light: #B8254E;
+  --maroon-subtle: #FFF0F3;
+
+  --gold-primary: #C99A35;
+  --gold-light: #E5BE58;
+  --gold-pale: #FDF4DB;
+  --gold-dark: #8F6A18;
+  --gold-gradient: linear-gradient(135deg, #FFE28A 0%, #C99A35 50%, #946C15 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #FFF3B3 0%, #DFB148 50%, #B8851E 100%);
+
+  --cream-bg: #FAF7F0;
+  --cream-surface: #FFFFFF;
+  --cream-card: #F5EFE3;
+  --cream-border: #E8DCC8;
+
+  --text-dark: #1E100A;
+  --text-muted: #64534B;
+  --text-light: #F7EFE2;
+  --text-gold: #E5BE58;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-tamil: 'Noto Serif Tamil', 'Mukta Malar', serif;
+  --font-heading: 'Cinzel', 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --shadow-sm: 0 2px 6px rgba(116, 21, 46, 0.06);
+  --shadow-md: 0 8px 24px rgba(116, 21, 46, 0.1);
+  --shadow-lg: 0 16px 40px rgba(116, 21, 46, 0.16);
+  --shadow-gold: 0 6px 20px rgba(201, 154, 53, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--maroon-dark);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tamil-title {
+  font-family: var(--font-tamil);
+  color: var(--gold-dark);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Section Header Component Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.section-header.text-left {
+  text-align: left;
+}
+
+.section-header .sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201, 154, 53, 0.12);
+  color: var(--gold-dark);
+  border: 1px solid rgba(201, 154, 53, 0.35);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-header.dark .sub-badge {
+  background: rgba(201, 154, 53, 0.2);
+  color: var(--gold-light);
+  border-color: rgba(201, 154, 53, 0.4);
+}
+
+.section-header .main-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: var(--maroon-darkest);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.section-header.dark .main-title {
+  color: #FFFFFF;
+}
+
+.section-header .tamil-sub {
+  font-family: var(--font-tamil);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold-primary);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.section-header .desc {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.02rem;
+  color: var(--text-muted);
+}
+
+.section-header.dark .desc {
+  color: rgba(250, 247, 240, 0.85);
+}
+
+/* Traditional Divider with Diya / Mandala */
+.cultural-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 16px 0 20px;
+}
+
+.cultural-divider .divider-line {
+  height: 1.5px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.cultural-divider .divider-icon {
+  color: var(--gold-primary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Button Variants */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gold-gradient);
+  color: #2D050E;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(201, 154, 53, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background: var(--gold-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 154, 53, 0.5);
+}
+
+.btn-gold-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(201, 154, 53, 0.15);
+  color: #FFF;
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-maroon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--maroon-rich) 0%, var(--maroon-primary) 50%, var(--maroon-dark) 100%);
+  color: #FAF7F0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(116, 21, 46, 0.35);
+  border: 1px solid rgba(201, 154, 53, 0.3);
+  cursor: pointer;
+}
+
+.btn-maroon:hover {
+  background: linear-gradient(135deg, var(--maroon-light) 0%, var(--maroon-rich) 50%, var(--maroon-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(116, 21, 46, 0.45);
+}
+
+.btn-maroon-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--maroon-primary);
+  border: 1.5px solid var(--maroon-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.btn-maroon-outline:hover {
+  background: var(--maroon-primary);
+  color: #FAF7F0;
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge-upcoming {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #105930 0%, #177C44 100%);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(16, 89, 48, 0.3);
+}
+
+.badge-completed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(100, 83, 75, 0.16);
+  color: var(--text-muted);
+  border: 1px solid rgba(100, 83, 75, 0.3);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.badge-category {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(116, 21, 46, 0.08);
+  color: var(--maroon-primary);
+  border: 1px solid rgba(116, 21, 46, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Traditional Ornamental Card Border */
+.ornate-card {
+  background: var(--cream-surface);
+  border: 1px solid var(--cream-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.ornate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(201, 154, 53, 0.5);
+}
+
+/* Maroon Theme Card */
+.maroon-card {
+  background: linear-gradient(160deg, #4A0E1D 0%, #2E050F 100%);
+  border: 1px solid rgba(201, 154, 53, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  box-shadow: 0 12px 32px rgba(31, 3, 11, 0.35);
+  transition: var(--transition);
+  position: relative;
+}
+
+.maroon-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-light);
+  box-shadow: 0 16px 40px rgba(201, 154, 53, 0.2);
+}
+
+/* Corner Mandala Accents */
+.corner-mandala-tr {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.corner-mandala-bl {
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Floating Action / Back to top button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--maroon-primary);
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(116, 21, 46, 0.4);
+  z-index: 99;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.back-to-top-btn:hover {
+  background: var(--gold-primary);
+  color: var(--maroon-darkest);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(201, 154, 53, 0.5);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-floating {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 10px 18px 10px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+  color: #FFF;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-floating span {
+    display: none;
+  }
+  .whatsapp-floating {
+    padding: 12px;
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    left: 16px;
+    bottom: 20px;
+  }
+  .back-to-top-btn {
+    right: 16px;
+    bottom: 20px;
+  }
+}

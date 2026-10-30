@@ -1,0 +1,10 @@
+{
+  "name": "kalaigal-root",
+  "version": "1.0.0",
+  "description": "Iyal Isai Naadaga Kalamanram - Monorepo root scripts",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:admin": "npm --prefix admin run dev"
+  }
+}
