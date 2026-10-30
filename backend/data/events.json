@@ -145,27 +145,5 @@
     "gallery": [
       "/uploads/nadagam_vintage.jpg"
     ]
-  },
-  {
-    "_id": "ev_7",
-    "title": "Veena Nadhanjali: Divine Strings Recital",
-    "tamilTitle": "வீணா நாதாஞ்சலி: தெய்வீக வீணை இசை சங்கமம்",
-    "date": "2026-08-12",
-    "displayDate": "August 12, 2026",
-    "time": "06:00 PM - 08:45 PM IST",
-    "venue": "Vani Mahal, G.N. Chetty Road, T. Nagar, Chennai",
-    "category": "Carnatic Music",
-    "shortDesc": "A transcendent Saraswathi Veena recital showcasing exquisite gamakas, classical ragas, and intricate taanam passages.",
-    "fullDesc": "Celebrated as the national instrument of classical lore, the Saraswathi Veena represents the pinnacle of microtonal purity.",
-    "poster": "/uploads/isai_vintage.jpg",
-    "featured": false,
-    "isPublished": true,
-    "troupe": "Saraswathi Veena Vadyalayam Troupe",
-    "artForm": "Veena Solo & Percussion Accompaniment",
-    "entry": "Completed Concert Offering",
-    "schedule": [],
-    "gallery": [
-      "/uploads/isai_vintage.jpg"
-    ]
   }
 ]

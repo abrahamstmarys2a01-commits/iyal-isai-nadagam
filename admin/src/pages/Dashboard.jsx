@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Calendar,
   Users,
@@ -16,6 +16,7 @@ import { api } from '../services/api';
 import '../styles/admin.css';
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,13 +25,41 @@ export default function Dashboard() {
     try {
       setLoading(true);
       const res = await api.getDashboardStats();
-      if (res.success) {
+      if (res && res.success) {
         setData(res);
-      } else {
-        setError(res.message);
+        return;
       }
+
+      // If unauthorized / token expired, redirect to login
+      if (res && res.message && (res.message.includes('authorized') || res.message.includes('Token') || res.message.includes('expired'))) {
+        navigate('/login');
+        return;
+      }
+
+      // Fallback: fetch live events and enquiries directly
+      const [eventsRes, enquiriesRes] = await Promise.all([
+        api.getPublicEvents().catch(() => ({ data: [] })),
+        api.adminGetEnquiries().catch(() => ({ data: [] }))
+      ]);
+
+      const events = eventsRes?.data || [];
+      const enquiries = enquiriesRes?.data || [];
+
+      setData({
+        success: true,
+        stats: {
+          totalEvents: events.length,
+          upcomingEvents: events.length,
+          completedEvents: 0,
+          totalEnquiries: enquiries.length,
+          pendingEnquiries: enquiries.filter(e => e.status === 'Pending').length,
+          confirmedEnquiries: enquiries.filter(e => e.status === 'Confirmed').length
+        },
+        recentEnquiries: enquiries.slice(0, 5),
+        nextEvents: events.slice(0, 4)
+      });
     } catch (err) {
-      setError('Failed to fetch dashboard statistics from server.');
+      console.warn('Dashboard fetch error:', err);
     } finally {
       setLoading(false);
     }
@@ -58,12 +87,12 @@ export default function Dashboard() {
   }
 
   const stats = data?.stats || {
-    totalEvents: 24,
-    upcomingEvents: 8,
-    completedEvents: 16,
-    totalEnquiries: 36,
-    pendingEnquiries: 12,
-    confirmedEnquiries: 18
+    totalEvents: 0,
+    upcomingEvents: 0,
+    completedEvents: 0,
+    totalEnquiries: 0,
+    pendingEnquiries: 0,
+    confirmedEnquiries: 0
   };
 
   const recentEnquiries = data?.recentEnquiries || [];
