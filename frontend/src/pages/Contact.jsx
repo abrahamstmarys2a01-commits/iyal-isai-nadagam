@@ -70,7 +70,7 @@ export default function Contact() {
               <div style={{
                 background: 'linear-gradient(145deg, #46091A 0%, #20030A 100%)',
                 borderRadius: '20px',
-                padding: '36px 30px',
+                padding: 'clamp(22px, 4vw, 36px) clamp(16px, 3.5vw, 30px)',
                 color: '#FAF7F0',
                 border: '1.5px solid rgba(201, 154, 53, 0.4)',
                 boxShadow: '0 16px 40px rgba(0,0,0,0.2)',

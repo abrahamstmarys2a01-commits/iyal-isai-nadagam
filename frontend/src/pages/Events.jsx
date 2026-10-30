@@ -198,9 +198,11 @@ export default function Events() {
           {/* Result Count and Active Filters readout */}
           <div style={{
             display: 'flex',
+            flexWrap: 'wrap',
+            gap: '10px',
             justifyContent: 'space-between',
             alignItems: 'center',
-            margin: '28px 0 20px',
+            margin: '24px 0 20px',
             fontSize: '0.9rem',
             color: 'var(--text-muted)'
           }}>

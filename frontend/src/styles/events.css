@@ -263,6 +263,10 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+  .event-meta-card {
+    position: relative !important;
+    top: 0 !important;
+  }
 }
 
 @media (max-width: 640px) {
