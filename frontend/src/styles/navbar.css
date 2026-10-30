@@ -374,7 +374,8 @@
     display: none;
   }
 
-  .logo-emblem-wrap svg {
+  .logo-emblem-wrap,
+  .logo-emblem-wrap img {
     width: 38px !important;
     height: 38px !important;
   }
@@ -444,9 +445,10 @@
     gap: 6px !important;
   }
 
-  .logo-emblem-wrap svg {
-    width: 30px !important;
-    height: 30px !important;
+  .logo-emblem-wrap,
+  .logo-emblem-wrap img {
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .logo-tamil-row1 {

@@ -18,6 +18,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { api } from '../services/api';
+import logoImg from '../assets/logo.png';
 import '../styles/admin.css';
 
 export default function AdminLayout({ children }) {
@@ -177,24 +178,13 @@ export default function AdminLayout({ children }) {
         </button>
 
         <div className="admin-sidebar-header">
-          {/* Traditional Temple Gopuram & Veena Medallion */}
+          {/* Official Emblem Logo */}
           <div className="sidebar-emblem">
-            <svg viewBox="0 0 100 100" width="100%" height="100%">
-              <defs>
-                <linearGradient id="sidebarGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFE082" />
-                  <stop offset="50%" stop-color="#C99A35" />
-                  <stop offset="100%" stop-color="#8C6514" />
-                </linearGradient>
-              </defs>
-              <circle cx="50" cy="50" r="46" fill="none" stroke="url(#sidebarGold)" strokeWidth="1.5" strokeDasharray="3 2" />
-              <path d="M 50,15 L 75,55 L 68,55 L 72,70 L 28,70 L 32,55 L 25,55 Z" fill="none" stroke="url(#sidebarGold)" strokeWidth="1.5" />
-              <circle cx="50" cy="40" r="6" fill="none" stroke="url(#sidebarGold)" strokeWidth="1.2" />
-              <path d="M 40,78 Q 50,84 60,78" fill="none" stroke="url(#sidebarGold)" strokeWidth="2" />
-              {/* Classical Nataraja Mudra Silhouette */}
-              <circle cx="50" cy="52" r="3.5" fill="#FFE082" />
-              <path d="M 48,56 L 46,65 L 54,65 L 52,56 Z" fill="url(#sidebarGold)" />
-            </svg>
+            <img
+              src={logoImg}
+              alt="Iyal Isai Nadagam Logo"
+              className="sidebar-emblem-img"
+            />
           </div>
 
           <div className="sidebar-org-title">
