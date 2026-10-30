@@ -64,12 +64,7 @@ export default function Contact() {
       {/* Main Contact Section */}
       <section className="section" style={{ background: 'var(--cream-bg)', paddingTop: '30px' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1.2fr',
-            gap: '40px',
-            alignItems: 'flex-start'
-          }}>
+          <div className="contact-main-grid">
             {/* Left: Contact Info Cards */}
             <div>
               <div style={{

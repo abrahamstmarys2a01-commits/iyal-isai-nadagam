@@ -68,39 +68,39 @@ export default function AdminLogin() {
       </div>
 
       <div style={{
-        maxWidth: '440px',
+        maxWidth: '360px',
         width: '100%',
         background: '#FFFFFF',
-        borderRadius: '24px',
-        padding: '40px 32px',
-        boxShadow: '0 24px 60px rgba(0, 0, 0, 0.5)',
+        borderRadius: '18px',
+        padding: '26px 22px',
+        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.45)',
         border: '1.5px solid rgba(201, 154, 53, 0.4)',
         position: 'relative',
         zIndex: 10
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div style={{ display: 'inline-block', marginBottom: '16px' }}>
-            <Logo size="large" showText={false} />
+        <div style={{ textAlign: 'center', marginBottom: '18px' }}>
+          <div style={{ display: 'inline-block', marginBottom: '8px' }}>
+            <Logo size="small" showText={false} />
           </div>
           <div style={{
             fontFamily: 'var(--font-tamil)',
             color: 'var(--maroon-primary)',
-            fontSize: '1rem',
+            fontSize: '0.85rem',
             fontWeight: 700,
-            marginBottom: '4px'
+            marginBottom: '2px'
           }}>
             இயல் இசை நாடகக் கலைமன்றம்
           </div>
           <h2 style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: '1.75rem',
+            fontSize: '1.35rem',
             color: 'var(--maroon-darkest)',
             margin: 0
           }}>
             Administrative Portal
           </h2>
-          <p style={{ fontSize: '0.86rem', color: 'var(--text-muted)', marginTop: '6px' }}>
-            Secure sign in for cultural coordinators & directors
+          <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '4px' }}>
+            Cultural Coordinators & Directors Sign In
           </p>
         </div>
 
@@ -109,26 +109,26 @@ export default function AdminLogin() {
             background: '#FEE2E2',
             border: '1px solid #FCA5A5',
             color: '#B91C1C',
-            padding: '12px 16px',
-            borderRadius: '10px',
-            fontSize: '0.86rem',
+            padding: '8px 12px',
+            borderRadius: '8px',
+            fontSize: '0.80rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
-            marginBottom: '20px'
+            gap: '6px',
+            marginBottom: '14px'
           }}>
-            <AlertCircle size={16} />
+            <AlertCircle size={14} />
             <span>{error}</span>
           </div>
         )}
 
         <form onSubmit={handleSubmit}>
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--maroon-darkest)', marginBottom: '6px' }}>
+          <div style={{ marginBottom: '12px' }}>
+            <label style={{ display: 'block', fontSize: '0.80rem', fontWeight: 700, color: 'var(--maroon-darkest)', marginBottom: '4px' }}>
               Username or Email
             </label>
             <div style={{ position: 'relative' }}>
-              <Mail size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--gold-dark)' }} />
+              <Mail size={15} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--gold-dark)' }} />
               <input
                 type="text"
                 name="email"
@@ -138,11 +138,11 @@ export default function AdminLogin() {
                 required
                 style={{
                   width: '100%',
-                  padding: '12px 14px 12px 42px',
-                  borderRadius: '10px',
+                  padding: '9px 12px 9px 36px',
+                  borderRadius: '8px',
                   border: '1.5px solid var(--cream-border)',
                   background: 'var(--cream-bg)',
-                  fontSize: '0.92rem',
+                  fontSize: '0.88rem',
                   outline: 'none',
                   boxSizing: 'border-box'
                 }}
@@ -150,12 +150,12 @@ export default function AdminLogin() {
             </div>
           </div>
 
-          <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '0.86rem', fontWeight: 700, color: 'var(--maroon-darkest)', marginBottom: '6px' }}>
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'block', fontSize: '0.80rem', fontWeight: 700, color: 'var(--maroon-darkest)', marginBottom: '4px' }}>
               Password
             </label>
             <div style={{ position: 'relative' }}>
-              <Lock size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--gold-dark)' }} />
+              <Lock size={15} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--gold-dark)' }} />
               <input
                 type="password"
                 name="password"
@@ -164,29 +164,29 @@ export default function AdminLogin() {
                 required
                 style={{
                   width: '100%',
-                  padding: '12px 14px 12px 42px',
-                  borderRadius: '10px',
+                  padding: '9px 12px 9px 36px',
+                  borderRadius: '8px',
                   border: '1.5px solid var(--cream-border)',
                   background: 'var(--cream-bg)',
-                  fontSize: '0.92rem',
+                  fontSize: '0.88rem',
                   outline: 'none',
                   boxSizing: 'border-box'
                 }}
               />
             </div>
             <div style={{
-              fontSize: '0.78rem',
+              fontSize: '0.74rem',
               color: 'var(--text-muted)',
-              marginTop: '8px',
+              marginTop: '6px',
               display: 'flex',
               justifyContent: 'space-between',
               background: '#FAF7F0',
-              padding: '6px 10px',
+              padding: '5px 8px',
               borderRadius: '6px',
               border: '1px dashed var(--cream-border)'
             }}>
               <span>User: <strong style={{ color: 'var(--maroon-primary)' }}>admin</strong></span>
-              <span>Password: <strong style={{ color: 'var(--maroon-primary)' }}>admin123</strong></span>
+              <span>Pass: <strong style={{ color: 'var(--maroon-primary)' }}>admin123</strong></span>
             </div>
           </div>
 
@@ -194,28 +194,28 @@ export default function AdminLogin() {
             type="submit"
             disabled={loading}
             className="btn-gold"
-            style={{ width: '100%', padding: '13px', fontSize: '0.95rem' }}
+            style={{ width: '100%', padding: '10px', fontSize: '0.88rem' }}
           >
             {loading ? (
               <span>Authenticating...</span>
             ) : (
               <>
-                <Sparkles size={16} />
+                <Sparkles size={14} />
                 <span>Enter Admin Console</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </>
             )}
           </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '24px', paddingTop: '16px', borderTop: '1px solid var(--cream-border)' }}>
+        <div style={{ textAlign: 'center', marginTop: '16px', paddingTop: '10px', borderTop: '1px solid var(--cream-border)' }}>
           <a
-            href="http://localhost:5174"
+            href="https://iyal-isai-nadagam.onrender.com"
             target="_blank"
             rel="noreferrer"
-            style={{ fontSize: '0.84rem', color: 'var(--maroon-primary)', textDecoration: 'none', fontWeight: 600 }}
+            style={{ fontSize: '0.78rem', color: 'var(--maroon-primary)', textDecoration: 'none', fontWeight: 600 }}
           >
-            ← View Public Website (Port 5174)
+            ← View Cultural Arts Site
           </a>
         </div>
       </div>

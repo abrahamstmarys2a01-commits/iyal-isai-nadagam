@@ -217,20 +217,20 @@ export default function Enquiry() {
                 <h4 style={{ margin: '0 0 14px', color: 'var(--maroon-primary)', borderBottom: '1px solid var(--cream-border)', paddingBottom: '8px', fontFamily: isTamil ? 'var(--font-tamil)' : 'inherit' }}>
                   {isTamil ? 'முன்பதிவு விவரங்களின் சுருக்கம்:' : 'Submitted Enquiry Summary:'}
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.88rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', fontSize: '0.88rem' }}>
                   <div><strong>Customer Name:</strong> {formData.customerName}</div>
                   <div><strong>Phone:</strong> {formData.phone}</div>
                   <div><strong>Email:</strong> {formData.email}</div>
                   <div><strong>Event Type:</strong> {formData.eventType}</div>
                   <div><strong>Event Date:</strong> {formData.eventDate}</div>
                   <div><strong>Venue:</strong> {formData.venue}</div>
-                  <div style={{ gridColumn: 'span 2' }}>
+                  <div style={{ gridColumn: '1 / -1' }}>
                     <strong>Performances:</strong> {formData.performanceCount}
                   </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', marginTop: '20px' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', marginTop: '20px', flexWrap: 'wrap' }}>
                 <button onClick={handleReset} className="btn-gold">
                   <RotateCcw size={16} />
                   <span>Submit Another Enquiry</span>

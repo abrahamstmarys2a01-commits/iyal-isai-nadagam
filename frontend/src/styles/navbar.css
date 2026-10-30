@@ -372,27 +372,48 @@
   }
 }
 
+@media (max-width: 640px) {
+  .logo-container {
+    max-width: calc(100vw - 110px) !important;
+    min-width: 0 !important;
+  }
+  .logo-text-block {
+    overflow: hidden !important;
+    min-width: 0 !important;
+  }
+  .logo-tamil-text,
+  .logo-english-title {
+    font-size: 0.80rem !important;
+    max-width: calc(100vw - 160px) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+}
+
 @media (max-width: 480px) {
   .navbar-top-strip {
     display: none;
   }
 
   .navbar-content {
-    gap: 8px;
+    gap: 6px;
   }
 
   .logo-container {
-    gap: 8px !important;
+    gap: 6px !important;
+    max-width: calc(100vw - 105px) !important;
   }
 
   .logo-emblem-wrap svg {
-    width: 34px !important;
-    height: 34px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
 
   .logo-tamil-text,
   .logo-english-title {
-    font-size: 0.82rem !important;
+    font-size: 0.74rem !important;
+    max-width: calc(100vw - 145px) !important;
   }
 
   /* Hide subtitle on narrow mobile screens to guarantee single-line fit */
@@ -400,12 +421,32 @@
     display: none !important;
   }
 
+  .language-switcher-pill {
+    padding: 3px 6px;
+    font-size: 0.72rem;
+    gap: 3px;
+  }
+
+  .language-switcher-pill svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .language-switcher-pill .lang-badge {
+    font-size: 0.70rem;
+  }
+
   .nav-actions-desktop {
-    gap: 8px;
+    gap: 6px;
   }
 
   .hamburger-btn {
-    padding: 6px;
+    padding: 5px;
+  }
+
+  .hamburger-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }
 

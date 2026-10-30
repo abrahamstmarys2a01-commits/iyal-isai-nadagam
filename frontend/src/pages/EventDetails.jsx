@@ -199,11 +199,7 @@ export default function EventDetails() {
       {/* Main Details Body */}
       <section className="section" style={{ background: 'var(--cream-bg)' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1.2fr 0.8fr',
-            gap: '40px'
-          }}>
+          <div className="event-content-grid">
             <div>
               <div style={{
                 background: '#FFFFFF',

@@ -1,8 +1,13 @@
-/* Admin Dashboard & Management UI Styles */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 
 .admin-layout {
   display: flex;
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   background-color: #FAF7F0; /* Cream background */
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1E100A;

@@ -452,6 +452,16 @@
   .about-highlights-list {
     grid-template-columns: 1fr;
   }
+  .about-experience-stamp {
+    right: 8px !important;
+    bottom: -10px !important;
+    padding: 10px 14px !important;
+    font-size: 0.85rem !important;
+  }
+  .hero-dancer-glow {
+    width: 250px !important;
+    height: 250px !important;
+  }
   .cta-banner {
     padding: 32px 18px;
     border-radius: 16px;

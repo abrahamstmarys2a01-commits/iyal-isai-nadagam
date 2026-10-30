@@ -54,6 +54,8 @@ img {
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -61,8 +63,18 @@ body {
   background-color: var(--cream-bg);
   color: var(--text-dark);
   line-height: 1.6;
+  max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Typography Defaults */
@@ -496,6 +508,21 @@ button {
 
 @media (max-width: 640px) {
   .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Contact Main Grid Responsive */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .contact-main-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
