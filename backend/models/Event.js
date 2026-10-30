@@ -35,7 +35,6 @@ const EventSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, 'Category is required'],
-    enum: ['Bharatanatyam', 'Carnatic Music', 'Folk Dance', 'Drama', 'Cultural Events'],
     default: 'Bharatanatyam'
   },
   shortDesc: {

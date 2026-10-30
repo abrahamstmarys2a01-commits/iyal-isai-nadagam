@@ -14,8 +14,8 @@ const autoSeedMongoDB = async () => {
     const Admin = require('../models/Admin');
     const Event = require('../models/Event');
     const Gallery = require('../models/Gallery');
-    const Setting = require('../models/Setting');
-    const { initialEvents, initialGallery, initialSettings } = require('../data/seedData');
+    const Settings = require('../models/Settings');
+    const { initialEvents, initialGallery } = require('../data/seedData');
 
     // 1. Seed Admin
     const adminExists = await Admin.findOne({ email: 'admin@kalamanram.org' });
@@ -47,10 +47,21 @@ const autoSeedMongoDB = async () => {
     }
 
     // 4. Seed Settings
-    const settingCount = await Setting.countDocuments();
-    if (settingCount === 0 && initialSettings) {
-      const { _id, ...cleanSettings } = initialSettings;
-      await Setting.create(cleanSettings);
+    const settingCount = await Settings.countDocuments();
+    if (settingCount === 0) {
+      await Settings.create({
+        kalamanramName: 'இயல் இசை நாடகக் கலைமன்றம்',
+        tagline: 'முத்தமிழின் தொன்மை மரபையும், மாண்பையும் போற்றும் தலைசிறந்த கலை நிறுவனம்',
+        contactEmail: 'contact@iyalisainaadagam.org',
+        contactPhone: '+91 98765 43210',
+        address: 'முத்தமிழ் வளாகம், TTK சாலை, சென்னை 600 004',
+        facebookUrl: 'https://facebook.com',
+        instagramUrl: 'https://instagram.com',
+        youtubeUrl: 'https://youtube.com',
+        whatsappNumber: '+91 98765 43210',
+        announcementBadge: 'மார்கழி கலை விழா 2026',
+        announcementText: '2026-ஆம் ஆண்டுக்கான இயல், இசை, நாடகக் கலை விழா முன்பதிவுகள் தொடங்கின!'
+      });
       console.log('[MongoDB Auto-Seed] Seeded default cultural settings');
     }
   } catch (err) {

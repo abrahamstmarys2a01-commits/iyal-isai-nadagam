@@ -13,7 +13,6 @@ const GallerySchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, 'Category is required'],
-    enum: ['Bharatanatyam', 'Folk Dance', 'Music', 'Drama', 'Cultural Events'],
     default: 'Bharatanatyam'
   },
   imageUrl: {
